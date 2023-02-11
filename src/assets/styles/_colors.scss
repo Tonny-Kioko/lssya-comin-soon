@@ -1,0 +1,14 @@
+$primaryColor : #5271ff;
+$secondaryColor : #4285f4;
+$thirdColor : #233dff;
+
+$backgroundColor : $thirdColor;
+$textColor : white;
+
+h1, h2{
+    color : $textColor;
+}
+
+p{
+    color : $backgroundColor;
+}

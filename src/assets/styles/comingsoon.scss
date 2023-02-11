@@ -1,0 +1,314 @@
+@import "./_colors.scss";
+@import "./values.scss";
+@import "./fonts.scss";
+
+h1, h2{
+    font-family: "Dosis";
+}
+
+.container{
+    display : flex;
+    flex-direction : column;
+    height : 100%;
+    // background-image : url(../images/coming-soon-back.svg);
+    background-color : $thirdColor;
+    background-size : 100% 100%;
+    padding : 0;
+
+}
+
+.header{
+    height : $headerHeight;
+    padding : 15px;
+}
+
+.logo-image{
+    height : 100%;
+}
+
+.body{
+    flex : 1;
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.body h1{
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1em;
+    padding: 0;
+    margin:0;
+}
+
+.body h2{
+    padding:0 10px;
+    margin:0;
+    font-weight: 600;
+    font-size : 40px;
+    line-height : 1.5em;
+}
+
+.footer{
+    height : $footerHeight;
+    display : flex;
+    flex-direction: column;
+    // background-image : url(../images/coming-soon-footer.png);
+    background-image : url(../images/coming-soon-footer.svg);
+    background-size: 100% 350%;
+    background-repeat: no-repeat;
+    padding : 10px 15px 10px;
+    justify-content: end;
+    background-position: bottom;
+}
+
+.copyright{
+    text-align: center;    
+}
+
+.copyright p{
+    font-family: "Belleza";
+    font-weight : 800;
+    font-size : 18px;
+}
+
+.telegram-wrapper{
+    padding : 0 15px 0 0;
+    text-align: right;
+    position: relative;
+}
+.btn-telegram img{
+    width : 40px;
+    height : 40px;
+    object-fit: contain;
+}
+
+.btn-telegram {
+    position: fixed;
+    right : 15px;
+    bottom : 30px;
+    width : 40px;
+    height : 40px;
+    background: -webkit-linear-gradient(-31deg, #5271ff 0%, #4285f4 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 0px 0px 24px rgba(white, .3);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    z-index : 10;
+}
+  
+.btn-telegram::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(30px + 12px);
+    min-height: calc(30px + 12px);
+    // border: 6px solid rgba($primaryColor, .64);
+    box-shadow: 0 0 60px rgba($primaryColor, .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+  
+.btn-telegram:hover, .btn-telegram:focus {
+    transform: translateY(-6px);
+}
+  
+.btn-telegram:hover::before, .btn-telegram:focus::before {
+    opacity: 1;
+}
+  
+.btn-telegram::after {
+    content: '';
+    width: 30px; 
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid $primaryColor;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+  
+.btn-telegram:hover::after, .btn-telegram:focus::after {
+    animation: none;
+    display: none;
+}
+  
+  @keyframes ring {
+    0% {
+      width: 50px;
+      height: 50px;
+      opacity: 1;
+    }
+    100% {
+      width: 90px;
+      height: 90px;
+      opacity: 0;
+    }
+}
+
+.email-subscribe{
+    padding : 0;
+    display: flex;
+    justify-content: center;
+    gap : 20px;
+}
+
+.email-subscribe button, .email-subscribe a{
+    border-radius : 50px;
+    height : 50px;
+    cursor: pointer;
+    
+    // background-color: white;
+    background-image : -webkit-linear-gradient(-31deg, $primaryColor 0%, $secondaryColor 100%);
+    border: none;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: white;
+    display: table;
+}
+.email-subscribe button span, .email-subscribe a span{
+    text-transform: uppercase;
+    padding : 0 50px;
+    color: white;
+    font-family: "Dosis";
+    font-weight: 600;
+    font-size: 18px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.email-subscribe button:hover{
+    box-shadow : rgb(47 128 237 / 57%) 0px 12px 24px -10px;
+}
+
+.email-subscribe input{
+    border-radius : 50px;
+    height : 50px;
+    width : 300px;
+    padding : 0 20px;
+    font-size : 18px;
+    font-weight : regular;
+    font-family: "Dosis";
+    border : none;
+}
+
+input, button, a{
+    outline : none;
+}
+
+.sociallink{
+    display :flex;
+    // flex : 10;
+    align-items : center;
+    gap : 20px;
+    justify-content: center;
+    margin-bottom : 20px;
+}
+
+.sociallink a{
+    transition: all 0.5s;
+}
+.sociallink a:hover{
+    transform : scale(1.2);
+}
+.sociallink svg{
+    width : 32px;
+    height : 32px;
+    fill : $thirdColor;
+}
+
+.subscription-desc{
+    padding : 40px 10px 0 10px;
+    color : white;
+    font-family: "Raleway";
+    font-size : 18px;
+}
+#form iframe, #form #root div>div:first-child{
+    width : 600px;
+}
+
+/*                    Responsive                     */
+@media only screen and (max-width: 1024px) {
+    .footer{
+        background-size : 100% 350%;
+        background-position : bottom;
+        padding : 0;
+    }
+
+    .telegram-wrapper img{
+        height : 50px;
+    }
+
+    .header {
+        flex: 0.2;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+    }
+
+    .footer{
+        height : $footerHeight_min;
+        justify-content: end;
+    }
+
+    .body{
+        justify-content: center;
+        padding-top : 50px;
+    }
+
+    .body h1{
+        font-size : 38px;
+    }
+    .body h2{
+        font-size : 20px;
+        padding-top : 10px;
+    }
+    .copyright{
+        padding-bottom: 20px;
+    }
+    .copyright p{
+        font-size : 11px;
+        margin : 0;
+    }
+    .subscription-desc{
+        padding : 50px 30px 0 30px;
+    }
+    .email-subscribe{
+        flex-direction: column;
+        padding : 0px 30px 0 30px;
+    }
+    .email-subscribe button{
+        width: 100%;
+    }
+
+    .email-subscribe input{
+        width: calc(100% - 40px);
+    }
+
+    .sociallink{
+        margin-bottom : 20px;
+        gap : 5px;
+    }
+    .logo-image{
+        height : 70px;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .sociallink{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+    .btn-telegram{
+        bottom : 40px;
+    }
+}
